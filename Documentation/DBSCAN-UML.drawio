@@ -1,0 +1,131 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="kWxMO4pAtoec_05xOwwy">
+    <mxGraphModel dx="1313" dy="1884" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="a2xs_DunYKDgyNJHraed-8" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="170" width="440" x="400" y="-90" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-1" parent="a2xs_DunYKDgyNJHraed-8" style="swimlane;whiteSpace=wrap;html=1;container=0;" value="DBSCAN" vertex="1">
+          <mxGeometry height="170" width="439.9999999999999" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-2" parent="a2xs_DunYKDgyNJHraed-8" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="-double epsilon&lt;div&gt;-&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;int&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;minPoints&lt;/span&gt;&lt;/div&gt;&lt;div&gt;-&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;DistanceMetric&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;metric&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+DBSCAN(double eps, int minPts, string metric)&lt;/div&gt;&lt;div&gt;+DBSCANResult cluster(List&amp;lt;Point&amp;gt; data)&lt;/div&gt;&lt;div&gt;-List&amp;lt;Point&amp;gt; findNeighbors(Point p, List&amp;lt;Point&amp;gt; data)&lt;/div&gt;&lt;div&gt;-void expandCluster(Point p, List&amp;lt;Point&amp;gt; neighbors, Cluster c, List&amp;lt;Point&amp;gt; data)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="170" width="440" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-11" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="150" width="320" x="940" y="-80" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-9" parent="a2xs_DunYKDgyNJHraed-11" style="swimlane;whiteSpace=wrap;html=1;container=0;" value="DBSCANResult" vertex="1">
+          <mxGeometry height="150" width="319.99999999999994" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-10" parent="a2xs_DunYKDgyNJHraed-11" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="&lt;div&gt;-List&amp;lt;Cluster&amp;gt; clusters&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-List&amp;lt;Point&amp;gt; noise&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+DBSCANResult(List&amp;lt;Cluster&amp;gt; clusters, List&amp;lt;Point&amp;gt; noise)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;List&amp;lt;Cluster&amp;gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;getClusters()&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;List&amp;lt;Point&amp;gt;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;getNoise()&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="320" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-14" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="150" width="150" x="1300" y="-310" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-12" parent="a2xs_DunYKDgyNJHraed-14" style="swimlane;whiteSpace=wrap;html=1;container=0;" value="Point" vertex="1">
+          <mxGeometry height="150" width="150" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-13" parent="a2xs_DunYKDgyNJHraed-14" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="&lt;div&gt;-double[] coordinates&lt;/div&gt;&lt;div&gt;-Status status&lt;/div&gt;&lt;div&gt;+Point(double[] coords)&lt;/div&gt;&lt;div&gt;+getCoordinates() double[]&lt;/div&gt;&lt;div&gt;+getStatus() Status&lt;/div&gt;&lt;div&gt;+setStatus(Status s)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="150" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-17" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="190" width="187.5" x="1281.25" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-15" parent="a2xs_DunYKDgyNJHraed-17" style="swimlane;whiteSpace=wrap;html=1;container=0;" value="Cluster" vertex="1">
+          <mxGeometry height="190" width="187.5" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-16" parent="a2xs_DunYKDgyNJHraed-17" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="&lt;div&gt;-List&amp;lt;Point&amp;gt; corePoints&lt;/div&gt;&lt;div&gt;-List&amp;lt;Point&amp;gt; borderPoints&lt;/div&gt;&lt;div&gt;+Cluster()&lt;/div&gt;&lt;div&gt;+&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;void&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;addCorePoint(Point p)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;void&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;addBorderPoint(Point p)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;List&amp;lt;Point&amp;gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;getCorePoints()&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;List&amp;lt;Point&amp;gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;getBorderPoints()&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;List&amp;lt;Point&amp;gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;getAllMembers()&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="190" width="187.5" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-20" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="120" width="220" x="510" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-18" parent="a2xs_DunYKDgyNJHraed-20" style="swimlane;whiteSpace=wrap;html=1;container=0;" value="DistanceMetric" vertex="1">
+          <mxGeometry height="120" width="220" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-19" parent="a2xs_DunYKDgyNJHraed-20" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;+&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;double&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;calculate(double[] x, double[] y)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="220" y="12" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-26" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="150" width="110" x="1540" y="-310" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-24" parent="a2xs_DunYKDgyNJHraed-26" style="swimlane;whiteSpace=wrap;html=1;container=0;" value="Status" vertex="1">
+          <mxGeometry height="150" width="110" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-25" parent="a2xs_DunYKDgyNJHraed-26" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="&lt;div&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;UNVISITED&lt;/div&gt;&lt;div&gt;VISITED&lt;/div&gt;&lt;div&gt;NOISE&lt;/div&gt;&lt;div&gt;CLUSTERED&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="110" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-28" connectable="0" parent="1" style="group" value="" vertex="1">
+          <mxGeometry height="120" width="220" x="510" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-29" parent="a2xs_DunYKDgyNJHraed-28" style="swimlane;whiteSpace=wrap;html=1;container=0;" value="MinkowskiDistance" vertex="1">
+          <mxGeometry height="120" width="220.00000000000006" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-30" parent="a2xs_DunYKDgyNJHraed-28" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="&lt;div&gt;-double p&lt;/div&gt;&lt;div&gt;+MinkowskiDistance(string metric)&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+double&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;calculate(double[] a, double[] b)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="220" y="12" as="geometry" />
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-38" edge="1" parent="1" source="a2xs_DunYKDgyNJHraed-29" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="a2xs_DunYKDgyNJHraed-19" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="550" y="330" as="sourcePoint" />
+            <mxPoint x="550" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-41" edge="1" parent="1" source="a2xs_DunYKDgyNJHraed-16" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="a2xs_DunYKDgyNJHraed-10" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="215" />
+            </Array>
+            <mxPoint x="1340" y="200" as="sourcePoint" />
+            <mxPoint x="990" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-42" edge="1" parent="1" source="a2xs_DunYKDgyNJHraed-13" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="a2xs_DunYKDgyNJHraed-9" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="-235" />
+            </Array>
+            <mxPoint x="890" y="-120" as="sourcePoint" />
+            <mxPoint x="1050" y="-120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-43" edge="1" parent="1" source="a2xs_DunYKDgyNJHraed-13" style="endArrow=circlePlus;endFill=0;endSize=7;html=1;rounded=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="a2xs_DunYKDgyNJHraed-25" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="1410" y="-330" as="sourcePoint" />
+            <mxPoint x="1520" y="-260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-45" edge="1" parent="1" source="a2xs_DunYKDgyNJHraed-2" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="a2xs_DunYKDgyNJHraed-10" value="Use">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="830" y="120" as="sourcePoint" />
+            <mxPoint x="920" y="-10" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-46" edge="1" parent="1" source="a2xs_DunYKDgyNJHraed-2" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="a2xs_DunYKDgyNJHraed-18" value="">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="420" y="120" as="sourcePoint" />
+            <mxPoint x="580" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-48" edge="1" parent="1" source="a2xs_DunYKDgyNJHraed-13" style="endArrow=open;html=1;endSize=12;startArrow=diamondThin;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="a2xs_DunYKDgyNJHraed-16" value="Relation">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1380" y="-150" as="sourcePoint" />
+            <mxPoint x="1550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-49" connectable="0" parent="a2xs_DunYKDgyNJHraed-48" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;" value="n" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a2xs_DunYKDgyNJHraed-50" connectable="0" parent="a2xs_DunYKDgyNJHraed-48" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=top;" value="1" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="15" y="-30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
