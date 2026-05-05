@@ -1,4 +1,4 @@
-package Code;
+package dbscan;
 
 public class MinkowskiDistance implements DistanceMetric {
   private double p;
@@ -11,12 +11,19 @@ public class MinkowskiDistance implements DistanceMetric {
    *   <li>"manhattan": p = 1
    *   <li>"euclidean": p = 2
    * </ul>
+   *
+   * @throws IllegalArgumentException
    */
-  MinkowskiDistance(String metric) {
+  MinkowskiDistance(String metric) throws IllegalArgumentException {
     if (metric.toLowerCase().equals("euclidean")) {
       this.p = 2;
     } else if (metric.toLowerCase().equals("manhattan")) {
       this.p = 1;
+    } else {
+      throw new IllegalArgumentException(
+          String.format(
+              "You entered: %s as an argument! Please use either euclidean or manhattan.",
+              metric));
     }
   }
 

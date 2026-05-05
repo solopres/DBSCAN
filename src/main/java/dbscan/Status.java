@@ -1,4 +1,4 @@
-package Code;
+package dbscan;
 
 /**
  * This is the status of an initialized Point. Options:
@@ -13,6 +13,6 @@ package Code;
 public enum Status {
   UNVISITED,
   VISITED,
-  NOITSE,
+  NOISE,
   CLUSTERED
 }

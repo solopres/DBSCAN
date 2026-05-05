@@ -1,4 +1,4 @@
-package Code;
+package dbscan;
 
 public interface DistanceMetric {
   /**

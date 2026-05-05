@@ -1,4 +1,4 @@
-package Code;
+package dbscan;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ public class DBSCANResult {
 
   /** Initialize the DBSCAN results with list of clusters and list of noise (outliers). */
   DBSCANResult(List<Cluster> clusters, List<Point> noise) {
-    this.clusters = clusters;
-    this.noise = noise;
+    this.clusters = List.copyOf(clusters);
+    this.noise = List.copyOf(noise);
   }
 
   /** Returns a list of the clusters found by DBSCAN. */

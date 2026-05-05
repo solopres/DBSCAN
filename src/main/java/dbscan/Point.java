@@ -1,5 +1,9 @@
-package Code;
+package dbscan;
 
+/**
+ * Point is the class used to hold the coordinates of points in the implementation of the DBSCAN
+ * class.
+ */
 public class Point {
   private double[] coordinates;
   private Status status;
