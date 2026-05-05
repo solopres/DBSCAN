@@ -1,3 +1,4 @@
+```
 expandCluster(Point root, List<Point> neighbors, Cluster cluster, List<Point> data)
 
 add root to cluster as a core point
@@ -22,3 +23,4 @@ for index in queue
 		add it to the cluster as a border point
 
 	set current point status to clustered
+```
