@@ -19,6 +19,7 @@ public class Parser {
     List<Point> coordinates = new ArrayList<>();
     String line = "";
     try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
+      bufferedReader.readLine();
       while ((line = bufferedReader.readLine()) != null) {
         String[] values = line.split(",");
         double[] coordinate = new double[values.length];

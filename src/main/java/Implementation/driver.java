@@ -9,7 +9,7 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 public class driver {
   public static void main(String[] args) {
-    List<Point> coordinates = Parser.parseFile("../Data/dataset.csv");
+    List<Point> coordinates = Parser.parseFile("Data/dataset.csv");
     DBSCAN db = new DBSCAN(0.5, 5, "euclidean");
     DBSCANResult results = db.cluster(coordinates);
 

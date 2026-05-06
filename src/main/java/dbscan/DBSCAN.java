@@ -54,7 +54,7 @@ public class DBSCAN {
   }
 
   /** Find all the neighbors of the target point and return them as a list. */
-  public List<Point> findNeighbors(Point target, List<Point> data) {
+  private List<Point> findNeighbors(Point target, List<Point> data) {
     List<Point> neighbors = new ArrayList<>();
     for (Point p : data) {
       if (this.getMetric().calculate(target.getCoordinates(), p.getCoordinates())
@@ -66,7 +66,7 @@ public class DBSCAN {
   }
 
   /** Expands a given cluster based on the provided point and neighbors via density based search. */
-  public void expandCluster(Point root, List<Point> neighbors, Cluster cluster, List<Point> data) {
+  private void expandCluster(Point root, List<Point> neighbors, Cluster cluster, List<Point> data) {
     cluster.addCorePoint(root);
     root.setStatus(Status.CLUSTERED);
 
@@ -90,7 +90,6 @@ public class DBSCAN {
 
       // If the current point has at least the minimum number of neighbors, it is a core point.
       if (currentNeighbors.size() >= this.getMinPoints()) {
-        currentPoint.setStatus(Status.CLUSTERED);
         cluster.addCorePoint(currentPoint);
         // Expand queue to include the current point's neighbors.
         for (Point p : currentNeighbors) {
@@ -98,9 +97,9 @@ public class DBSCAN {
         }
       } else {
         // Otherwise it is a border point.
-        currentPoint.setStatus(Status.CLUSTERED);
         cluster.addBorderPoint(currentPoint);
       }
+      currentPoint.setStatus(Status.CLUSTERED);
     }
   }
 
