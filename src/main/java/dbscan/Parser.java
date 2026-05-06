@@ -1,6 +1,9 @@
 package dbscan;
 
+import java.awt.Color;
+import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Path2D;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -35,47 +38,82 @@ public class Parser {
   }
 
   /** Parses the results of {@link DBSCAN#cluster(List<Point>)}. */
-  public static List<XYSeriesCollection> parseResults(DBSCANResult results) {
+  private static XYSeriesCollection parseResults(DBSCANResult results) {
     List<Cluster> clusters = results.getClusters();
-    List<XYSeriesCollection> dataClusters = new ArrayList<>();
+    XYSeriesCollection dataClusters = new XYSeriesCollection();
 
     for (int i = 0; i < clusters.size(); i++) {
       Cluster cluster = clusters.get(i);
-      XYSeriesCollection dataCluster = new XYSeriesCollection();
 
-      XYSeries coreSeries = new XYSeries("Cluster " + i + " (Core)");
-      XYSeries borderSeries = new XYSeries("Cluster " + i + " (Border)");
+      XYSeries series = new XYSeries("Cluster " + (i + 1));
 
-      List<Point> corePoints = cluster.getCorePoints();
-      for (Point point : corePoints) {
-        coreSeries.add(point.getCoordinates()[0], point.getCoordinates()[1]);
-      }
-      List<Point> borderPoints = cluster.getCorePoints();
-      for (Point point : borderPoints) {
-        borderSeries.add(point.getCoordinates()[0], point.getCoordinates()[1]);
+      // Add core points before border points.
+      for (Point p : cluster.getCorePoints()) {
+        series.add(p.getCoordinates()[0], p.getCoordinates()[1]);
       }
 
-      dataCluster.addSeries(coreSeries);
-      dataCluster.addSeries(borderSeries);
-      dataClusters.add(dataCluster);
+      for (Point p : cluster.getBorderPoints()) {
+        series.add(p.getCoordinates()[0], p.getCoordinates()[1]);
+      }
+      dataClusters.addSeries(series);
     }
+
+    XYSeries noiseSeries = new XYSeries("Noise");
+    for (Point p : results.getNoise()) {
+      noiseSeries.add(p.getCoordinates()[0], p.getCoordinates()[1]);
+    }
+    dataClusters.addSeries(noiseSeries);
     return dataClusters;
   }
 
+  /**
+   * Create a JFreeChart for DBSCAN visualization.<br>
+   * Noise marked as X's.
+   *
+   * @param results - The result of the DBSCAN.
+   * @param title - The title of the graph.
+   * @param xLabel - The title of the x-axis.
+   * @param yLabel - The title of the y-axis.
+   */
   public static JFreeChart createDBSCANChart(
-      List<XYSeriesCollection> dataClusters, String title, String xLabel, String yLabel) {
-    JFreeChart chart = ChartFactory.createScatterPlot(title, xLabel, yLabel, null);
+      DBSCANResult results, String title, String xLabel, String yLabel) {
+    XYSeriesCollection dataClusters = parseResults(results);
+    JFreeChart chart = ChartFactory.createScatterPlot(title, xLabel, yLabel, dataClusters);
     XYPlot plot = chart.getXYPlot();
-    for (int i = 0; i < dataClusters.size(); i++) {
-      plot.setDataset(i, dataClusters.get(i));
+    XYLineAndShapeRenderer renderer =
+        new XYLineAndShapeRenderer(false, true) {
+          @Override
+          public Shape getItemShape(int row, int col) {
+            if (row >= results.getClusters().size()) {
+              return makeX(3.0);
+            } else {
+              Cluster cluster = results.getClusters().get(row);
 
-      XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer(false, true);
-
-      renderer.setSeriesShape(0, new Ellipse2D.Double(-4, -4, 8, 8));
-      renderer.setSeriesShape(1, new Ellipse2D.Double(-2, -2, 4, 4));
-
-      plot.setRenderer(renderer);
-    }
+              int coreCount = cluster.getCorePoints().size();
+              if (col < coreCount) {
+                return new Ellipse2D.Double(-4, -4, 8, 8);
+              } else {
+                return new Ellipse2D.Double(-2, -2, 4, 4);
+              }
+            }
+          }
+        };
+    int noiseIndex = results.getClusters().size();
+    renderer.setSeriesPaint(noiseIndex, Color.BLACK);
+    plot.setRenderer(renderer);
     return chart;
+  }
+
+  /** Makes x as a shape for a JFreeChart renderer. */
+  private static Shape makeX(double size) {
+    Path2D shape = new Path2D.Double();
+    // Make / line
+    shape.moveTo(-size, -size);
+    shape.lineTo(size, size);
+    // Make \ line
+    shape.moveTo(size, -size);
+    shape.lineTo(-size, size);
+    // Return X shape
+    return shape;
   }
 }

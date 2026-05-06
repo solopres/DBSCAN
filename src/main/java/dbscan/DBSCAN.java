@@ -1,6 +1,7 @@
 package dbscan;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /** This class implements DBSCAN using either Manhattan or Euclidean distance. */
@@ -57,7 +58,8 @@ public class DBSCAN {
   private List<Point> findNeighbors(Point target, List<Point> data) {
     List<Point> neighbors = new ArrayList<>();
     for (Point p : data) {
-      if (this.getMetric().calculate(target.getCoordinates(), p.getCoordinates())
+      boolean isTarget = Arrays.equals(target.getCoordinates(), p.getCoordinates());
+      if (!isTarget && this.getMetric().calculate(target.getCoordinates(), p.getCoordinates())
           <= this.getEpsilon()) {
         neighbors.add(p);
       }
