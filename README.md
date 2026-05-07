@@ -1,6 +1,6 @@
 # DBSCAN
 This Repo contains an implementation of Density Based Spacial Clustering of Applications with Noise (DBSCAN), a machine learning clustering algorithm, in Java.
-The implementation consists of a DBSCAN class that allows for a coder to easily cluster various datasets with standard preprocessing. The implementation also contains an example of usage for the class.
+The implementation consists of a DBSCAN class that allows for a coder to easily cluster various datasets with standard preprocessing. The implementation also contains an example of usage for the class. The class is currently capable of handling both Euclidean and Manhattan distance calulations. The clustering algorithm currently only uses a "brute force" method to cluster points..
 ## Sections
  * [DBSCAN Code](/src/main/java/dbscan)
  * [Implementation Code](/src/main/java/Implementation)
