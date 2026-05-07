@@ -22,7 +22,7 @@ public class MinkowskiDistance implements DistanceMetric {
     } else {
       throw new IllegalArgumentException(
           String.format(
-              "You entered: %s as an argument! Please use either euclidean or manhattan.",
+              "You entered %s as an argument! Please use either euclidean or manhattan.",
               metric));
     }
   }

@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="kWxMO4pAtoec_05xOwwy">
-    <mxGraphModel dx="1407" dy="1940" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="518" dy="1409" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -143,7 +143,7 @@
         <mxCell id="3P5V2iYH9CNv235bjSIK-10" parent="3P5V2iYH9CNv235bjSIK-13" style="swimlane;whiteSpace=wrap;html=1;container=0;" value="Parser" vertex="1">
           <mxGeometry height="150" width="370.00000000000006" as="geometry" />
         </mxCell>
-        <mxCell id="3P5V2iYH9CNv235bjSIK-11" parent="3P5V2iYH9CNv235bjSIK-13" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="+List&amp;lt;Point&amp;gt; parseFile(String filePath)&lt;div&gt;+List&amp;lt;XYSeriesCollection&amp;gt; parseResults(DBSCANResult results)&lt;/div&gt;&lt;div&gt;+JFreeChart createDBSCANChart(List&amp;lt;XYSeriesCollection&amp;gt; dataClusters, String title, String xLabel, String yLabel)&lt;/div&gt;" vertex="1">
+        <mxCell id="3P5V2iYH9CNv235bjSIK-11" parent="3P5V2iYH9CNv235bjSIK-13" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="+List&amp;lt;Point&amp;gt; parseFile(String filePath)&lt;div&gt;-XYSeriesCollection parseResults(DBSCANResult results)&lt;/div&gt;&lt;div&gt;+JFreeChart createDBSCANChart(DBSCANResult results, String title, String xLabel, String yLabel)&lt;/div&gt;" vertex="1">
           <mxGeometry height="150" width="370.00000000000006" as="geometry" />
         </mxCell>
       </root>

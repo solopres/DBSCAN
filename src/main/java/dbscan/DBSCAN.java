@@ -76,7 +76,7 @@ public class DBSCAN {
     for (int i = 0; i < queue.size(); i++) {
       Point currentPoint = queue.get(i);
 
-      // Any point that was already visited and was classified as noise is a border point.
+      // Any point that was classified as noise is a border point.
       if (currentPoint.geStatus() == Status.NOISE) {
         currentPoint.setStatus(Status.CLUSTERED);
         cluster.addBorderPoint(currentPoint);
@@ -90,7 +90,7 @@ public class DBSCAN {
       currentPoint.setStatus(Status.VISITED);
       List<Point> currentNeighbors = findNeighbors(currentPoint, data);
 
-      // If the current point has at least the minimum number of neighbors, it is a core point.
+      // If the current point has at least minPoint neighbors, it is a core point.
       if (currentNeighbors.size() >= this.getMinPoints()) {
         cluster.addCorePoint(currentPoint);
         // Expand queue to include the current point's neighbors.
