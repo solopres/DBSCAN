@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="kWxMO4pAtoec_05xOwwy">
-    <mxGraphModel dx="518" dy="1409" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1791" dy="2169" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -23,7 +23,7 @@
           <mxGeometry height="145" width="205" as="geometry" />
         </mxCell>
         <mxCell id="a2xs_DunYKDgyNJHraed-17" connectable="0" parent="1" style="group" value="" vertex="1">
-          <mxGeometry height="190" width="187.5" x="1281.25" y="120" as="geometry" />
+          <mxGeometry height="190" width="187.5" x="1410" y="-100" as="geometry" />
         </mxCell>
         <mxCell id="a2xs_DunYKDgyNJHraed-15" parent="a2xs_DunYKDgyNJHraed-17" style="swimlane;whiteSpace=wrap;html=1;container=0;" value="Cluster" vertex="1">
           <mxGeometry height="190" width="187.5" as="geometry" />
@@ -64,11 +64,9 @@
             <mxPoint x="550" y="350" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="a2xs_DunYKDgyNJHraed-41" edge="1" parent="1" source="a2xs_DunYKDgyNJHraed-16" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="a2xs_DunYKDgyNJHraed-10" value="">
+        <mxCell id="a2xs_DunYKDgyNJHraed-41" edge="1" parent="1" source="a2xs_DunYKDgyNJHraed-16" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="a2xs_DunYKDgyNJHraed-10" value="">
           <mxGeometry relative="1" width="160" as="geometry">
-            <Array as="points">
-              <mxPoint x="1100" y="215" />
-            </Array>
+            <Array as="points" />
             <mxPoint x="1340" y="200" as="sourcePoint" />
             <mxPoint x="990" y="130" as="targetPoint" />
           </mxGeometry>
@@ -138,13 +136,19 @@
           <mxGeometry height="30" width="60" x="760" y="420" as="geometry" />
         </mxCell>
         <mxCell id="3P5V2iYH9CNv235bjSIK-13" connectable="0" parent="1" style="group" value="" vertex="1">
-          <mxGeometry height="150" width="370" x="1140" y="380" as="geometry" />
+          <mxGeometry height="150" width="370" x="915" y="200" as="geometry" />
         </mxCell>
         <mxCell id="3P5V2iYH9CNv235bjSIK-10" parent="3P5V2iYH9CNv235bjSIK-13" style="swimlane;whiteSpace=wrap;html=1;container=0;" value="Parser" vertex="1">
           <mxGeometry height="150" width="370.00000000000006" as="geometry" />
         </mxCell>
         <mxCell id="3P5V2iYH9CNv235bjSIK-11" parent="3P5V2iYH9CNv235bjSIK-13" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="+List&amp;lt;Point&amp;gt; parseFile(String filePath)&lt;div&gt;-XYSeriesCollection parseResults(DBSCANResult results)&lt;/div&gt;&lt;div&gt;+JFreeChart createDBSCANChart(DBSCANResult results, String title, String xLabel, String yLabel)&lt;/div&gt;" vertex="1">
           <mxGeometry height="150" width="370.00000000000006" as="geometry" />
+        </mxCell>
+        <mxCell id="bOLxrkGJevxOE42kXeTh-1" edge="1" parent="1" source="3P5V2iYH9CNv235bjSIK-11" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="a2xs_DunYKDgyNJHraed-10" value="Use">
+          <mxGeometry relative="1" width="160" as="geometry">
+            <mxPoint x="1090" y="200" as="sourcePoint" />
+            <mxPoint x="1250" y="200" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
