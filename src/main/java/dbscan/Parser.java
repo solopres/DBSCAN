@@ -37,7 +37,7 @@ public class Parser {
     return coordinates;
   }
 
-  /** Parses the results of {@link DBSCAN#cluster(List<Point>)}. */
+  /** Parses the results of {@link DBSCAN#cluster(List<Point>)} into a JFreeChart usable format. */
   private static XYSeriesCollection parseResults(DBSCANResult results) {
     List<Cluster> clusters = results.getClusters();
     XYSeriesCollection dataClusters = new XYSeriesCollection();
@@ -78,26 +78,32 @@ public class Parser {
   public static JFreeChart createDBSCANChart(
       DBSCANResult results, String title, String xLabel, String yLabel) {
     XYSeriesCollection dataClusters = parseResults(results);
+    // Make chart.
     JFreeChart chart = ChartFactory.createScatterPlot(title, xLabel, yLabel, dataClusters);
     XYPlot plot = chart.getXYPlot();
+    // Make shape renderer for chart
     XYLineAndShapeRenderer renderer =
         new XYLineAndShapeRenderer(false, true) {
           @Override
           public Shape getItemShape(int row, int col) {
             if (row >= results.getClusters().size()) {
+              // If point is noise, make it an X
               return makeX(3.0);
             } else {
               Cluster cluster = results.getClusters().get(row);
 
               int coreCount = cluster.getCorePoints().size();
               if (col < coreCount) {
+                // Core points are big circles
                 return new Ellipse2D.Double(-4, -4, 8, 8);
               } else {
+                // Border points are small circles
                 return new Ellipse2D.Double(-2, -2, 4, 4);
               }
             }
           }
         };
+    // Make noise colored black
     int noiseIndex = results.getClusters().size();
     renderer.setSeriesPaint(noiseIndex, Color.BLACK);
     plot.setRenderer(renderer);

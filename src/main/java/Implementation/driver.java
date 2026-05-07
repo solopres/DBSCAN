@@ -1,4 +1,4 @@
-package Implementation;
+package implementation;
 
 import dbscan.*;
 import java.util.List;
@@ -14,6 +14,14 @@ public class driver {
 
     JFreeChart chart =
         Parser.createDBSCANChart(results, "DBSCAN Clustering Results", "X-Axis", "Y-Axis");
+    display(chart);
+
+    coordinates = Parser.parseFile("Data/Clustering_gmm.csv");
+    db = new DBSCAN(0.7, 3, "manhattan");
+    results = db.cluster(coordinates);
+
+    chart =
+        Parser.createDBSCANChart(results, "DBSCAN Clustering Results", "Weight", "Height");
     display(chart);
   }
 
